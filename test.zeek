@@ -13,7 +13,7 @@ event http_reply(c: connection, version: string, code: count, reason: string)
     orig_hResp[c$id$orig_h]=0;
     orig_h404URLResp[c$id$orig_h]=set();
   }
-  local duration:interval=orig_hStart_time[c$id$orig_h]-time_now;
+  local duration:interval=time_now-orig_hStart_time[c$id$orig_h];
   if(duration>10mins)
   {
     orig_hStart_time[c$id$orig_h]=time_now;
