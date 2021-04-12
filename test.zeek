@@ -27,6 +27,9 @@ event http_reply(c: connection, version: string, code: count, reason: string)
         }
       }
     }
+    orig_h404Resp[c$id$orig_h]=0;
+    orig_hResp[c$id$orig_h]=0;
+    orig_h404URLResp[c$id$orig_h]=set();
    }
 
    orig_hResp[c$id$orig_h]=orig_hResp[c$id$orig_h]+1;
