@@ -14,9 +14,9 @@ event http_reply(c: connection, version: string, code: count, reason: string)
     orig_h404URLResp[c$id$orig_h]=set();
   }
   local duration:interval=time_now-orig_hStart_time[c$id$orig_h];
-  if(duration>=10mins)
+  if(duration>10mins)
   {
-    orig_hStart_time[c$id$orig_h]=time_now;
+    orig_hStart_time[c$id$orig_h]=orig_hStart_time[c$id$orig_h]+10mins;
     if( orig_h404Resp[c$id$orig_h]>2)
     {
       if(orig_h404Resp[c$id$orig_h]/orig_hResp[c$id$orig_h]>0.2)
