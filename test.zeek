@@ -15,7 +15,7 @@ event zeek_init()
                         if(res2$sum>2){
                         if(res2$sum/res1$sum>0.2){
                         if(res3$unique/res2$sum>0.5){
-                        print fmt("%s is a scanner with %d scan attemps on %d urls", 
+                        print fmt("%s is a scanner with %g scan attemps on %g urls", 
                         			key$host, res2$sum, res3$unique);
                         }}}
                         }]);
